@@ -1,0 +1,52 @@
+<div class="d-flex justify-content-center">
+ <button class="btn btn-primary" (click)="downloadInvoice()"><i class="bi bi-download"> </i> Download Invoice</button>
+</div>
+
+<div class="invoice" id="invoice">
+    <h2>Tax Invoice</h2>
+    <div class="order-details">
+        
+        <p><strong>Invoice ID:</strong> INV{{invoice.invoiceID}}</p>
+        <p><strong>Order ID:</strong> ORD{{invoice.orderID }}</p>
+        
+        <p><strong>Invoice Date:</strong> {{invoice.invoiceDate | date: 'short'}}</p>
+    </div>
+    <p><strong>Sold By:</strong> CIGFIL Limited</p>
+    <p class="small-italic"><strong>Ship-from Address:</strong> Svagraha constructions & holdings, Survey 6/2C, Vampattu road, Koduvalli, Thiruvallur Taluk, Thiruvallur district, Chennai, Tamil Nadu, India - 600055, IN-TN</p>
+    <p class="small-italic"><strong>Ship-to Address:</strong> {{invoice.firstName}} {{invoice.lastName}}, {{invoice.address}} <br/>Mobile: {{invoice.phonenumber}}<br>Email: {{invoice.email}}</p>
+    <p><strong>Total items:</strong> {{invoice.orderitems.length}}</p>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Product Title</th>
+                <th>Qty</th>
+                <th>Gross Amount ₹</th>
+                <th>Discounts ₹</th>
+                <th>Total ₹</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let orderitem of invoice.orderitems">
+                <td>{{orderitem.name}}</td>
+                <td>{{orderitem.quantity}}</td>
+                <td>{{orderitem.price * 1.1 | number:'1.2-2'}}</td>
+                <td>{{orderitem.price * 0.1 | number:'1.2-2'}}</td>
+                <td>{{orderitem.price}}</td>
+            </tr>
+            <tr>
+                <td>Tax And Shipping And Handling Charges</td>
+                <td>1</td>
+                <td>{{invoice.taxAmount + invoice.shippingCost}}</td>
+                <td>0.00</td>
+                <td>{{invoice.taxAmount + invoice.shippingCost}}</td>
+            </tr>
+            <tr>
+                <td colspan="4"><strong>Total</strong></td>
+                <td>{{invoice.totalAmount}}</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <h3 class="total">Grand Total ₹ {{invoice.totalAmount}}</h3>
+</div>

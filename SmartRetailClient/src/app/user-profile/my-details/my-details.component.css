@@ -1,0 +1,55 @@
+/* General Styles */
+.details-section, .email-section {
+  margin-bottom: 30px;
+}
+
+.details-section h3, .email-section h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.form-group small {
+  color: #888;
+  display: block;
+  margin-top: 5px;
+}
+
+/* Save Button */
+.save-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.save-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .details-section, .email-section {
+    padding: 10px;
+  }
+}

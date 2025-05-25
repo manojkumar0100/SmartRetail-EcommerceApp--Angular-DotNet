@@ -1,0 +1,70 @@
+<div class="add-product">
+  <h2>Add New Product</h2>
+
+  <!-- Success message -->
+  <div *ngIf="successMessage" class="success-message">
+    {{ successMessage }}
+  </div>
+
+  <form (ngSubmit)="addProduct()" #productForm="ngForm">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" id="name" [(ngModel)]="product.name" name="name" required minlength="3" #name="ngModel">
+      <div *ngIf="name.invalid && (name.dirty || name.touched)" class="error-message">
+        Name is required and should be at least 3 characters long.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <textarea id="description" [(ngModel)]="product.description" name="description" required #description="ngModel"></textarea>
+      <div *ngIf="description.invalid && (description.dirty || description.touched)" class="error-message">
+        Description is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="price">Price:</label>
+      <input type="number" id="price" [(ngModel)]="product.price" name="price" required min="1" #price="ngModel">
+      <div *ngIf="price.invalid && (price.dirty || price.touched)" class="error-message">
+        Price is required and must be a number.
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <label for="stock">Stock:</label>
+      <input type="number" id="stock" [(ngModel)]="product.quantity" name="stock" required min="1" #stock="ngModel">
+      <div *ngIf="stock.invalid && (stock.dirty || stock.touched)" class="error-message">
+        Stock is required and must be at least 1.
+      </div>
+    </div>
+
+    
+
+    <div class="form-group">
+      <label for="image">Image:</label>
+      <input type="file" id="image" (change)="onFileChange($event)" name="image" required>
+      <!-- <input type="text" id="image" [(ngModel)]="product.imageUrl" name="image" required > -->
+      <!-- <div *ngIf="image.invalid && (image.dirty || image.touched)" class="error-message">
+        Image is required.
+      </div> -->
+    </div>
+
+    
+
+    <div class="form-group">
+      <label for="category">Category:</label>
+      <select id="category" [(ngModel)]="product.categoryID" name="category" required #category="ngModel" class="form-control">
+        <option *ngFor="let category of categories" [value]="category.categoryID">{{ category.name }}</option>
+      </select>
+      <div *ngIf="category.invalid && (category.dirty || category.touched)" class="error-message">
+        Category is required.
+      </div>
+    </div>
+
+    
+
+    <button type="submit" [disabled]="productForm.invalid" class="btn">Add Product</button>
+  </form>
+</div>

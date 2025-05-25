@@ -1,0 +1,31 @@
+<div class="manage-stock">
+  <h2>Manage Stock</h2>
+
+  <!-- Success message for stock update -->
+  <div *ngIf="successMessage" class="success-message">
+    {{ successMessage }}
+  </div>
+
+  <!-- Error message for validation -->
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+
+  <div class="stock-list">
+    <div class="stock-item" *ngFor="let product of products">
+      <div>
+        <strong>{{ product.name }}</strong>  - {{ product.price | currency : 'INR'}}
+      </div>
+      <div>
+        <label for="stock-{{ product.productID }}">Stock:</label>
+        <input type="number" [(ngModel)]="product.quantity" id="stock-{{ product.productID }}" required min="0" #stockInput="ngModel">
+        <button (click)="updateStock(product,stockInput)" class="btn">Update</button>
+      </div>
+
+      <!-- Validation error message -->
+      <div *ngIf="stockInput.invalid && (stockInput.dirty || stockInput.touched)" class="error-message">
+        Stock quantity must be a valid non-negative number.
+      </div>
+    </div>
+  </div>
+</div>

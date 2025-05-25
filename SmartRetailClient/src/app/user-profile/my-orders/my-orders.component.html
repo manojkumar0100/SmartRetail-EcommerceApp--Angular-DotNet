@@ -1,0 +1,14 @@
+<h2>My Orders</h2>
+
+<section class="orders-section">
+  <div class="order" *ngFor="let order of orders">
+   
+    <h3>Order #ORD{{ order.orderID }}</h3>
+    <p>Date:   {{ order.orderDate | date: "MMM dd,YYYY"}}</p>
+    <p>Total:   {{ order.amount | currency: 'INR' }}</p>
+    <button class="btn view-btn" [routerLink]="['/profile/orders/invoice',order.orderID]" routerLinkActive="active">View Invoice</button>
+  </div>
+</section>
+
+<router-outlet></router-outlet>
+

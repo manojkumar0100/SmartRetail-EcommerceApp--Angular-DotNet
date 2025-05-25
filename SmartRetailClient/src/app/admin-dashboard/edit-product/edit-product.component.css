@@ -1,0 +1,141 @@
+.edit-product {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* max-width: 900px; */
+  margin: 0 auto;
+}
+
+h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th, td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+th {
+  background-color: #f4f4f4;
+}
+
+button.btn {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button.btn:hover {
+  background-color: #0056b3;
+}
+
+button.btn-delete {
+  background-color: #dc3545;
+}
+
+button.btn-delete:hover {
+  background-color: #c82333;
+}
+
+.success-message {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #c3e6cb;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.edit-form {
+  margin-top: 30px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button.btn-update {
+  width: 100%;
+  font-size: 16px;
+}
+
+button.btn-update:disabled {
+  background-color: #ccc;
+}
+
+/* Make the table and form responsive */
+@media (max-width: 768px) {
+  .edit-product {
+    padding: 15px;
+  }
+
+  table, thead, tbody, th, td, tr {
+    display: block;
+    width: 100%;
+  }
+
+  tr {
+    margin-bottom: 15px;
+  }
+
+  th {
+    text-align: right;
+    padding-right: 20px;
+  }
+
+  td {
+    text-align: left;
+  }
+
+  th:before {
+    content: attr(data-label);
+    display: inline-block;
+    width: 100px;
+    text-align: left;
+    font-weight: bold;
+  }
+}

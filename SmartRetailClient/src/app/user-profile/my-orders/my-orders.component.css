@@ -1,0 +1,41 @@
+.orders-section {
+  margin-bottom: 30px;
+}
+
+.order {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  background-color: #f8f9fa;
+}
+
+.order h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.order p {
+  margin-bottom: 5px;
+}
+
+/* View Button */
+.view-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.view-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .order {
+    padding: 15px;
+  }
+}

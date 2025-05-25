@@ -1,0 +1,83 @@
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top" >
+  <div class="container-fluid my-2" id="navbar-container">
+    <a class="navbar-brand" href="#">SmartRetail</a>
+    <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="sidebar offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <!-- Sidebar Header -->
+      <div class="offcanvas-header text-white border-bottom align-items-center">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">SmartRetail</h5>
+        <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 pe-3">
+          <li class="nav-item white-border">
+            <a class="nav-link active" aria-current="page" [routerLink]="['/']">Home</a>
+          </li>
+        </ul>
+
+        <!-- User Actions (Cart, Wishlist, Profile) -->
+        <ul class="navbar-nav">
+
+          <!-- Wishlist Icon -->
+          <li class="nav-item white-border" *ngIf="isLoggedin">
+            <a class="nav-link active" [routerLink]="['/wishlist']">
+              <i class="bi bi-heart h5"></i> Wishlist
+            </a>
+          </li>
+
+          <!-- Cart Icon -->
+          <li class="nav-item white-border" *ngIf="isLoggedin">
+            <a class="nav-link active" [routerLink]="['/cart']">
+              <i class="bi bi-cart3 h5"></i> Cart
+            </a>
+          </li>
+
+          <li class="nav-item dropdown white-border" *ngIf="!isLoggedin">
+            <a class="nav-link active dropdown-toggle" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Profile
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+              <li><a class="dropdown-item" href="#" [routerLink]="['/login']">Login / Register</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown white-border" *ngIf="isLoggedin">
+            <a class="nav-link active dropdown-toggle" id="accountDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-person-circle"></i> {{username}}
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="accountDropdown">
+              <li><a class="dropdown-item " href="#" [routerLink]="['/profile']">My Profile</a></li>
+              <div class="dropdown-divider"></div>
+              <li><a class="dropdown-item" href="#" (click)="OnLogout()">Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="profile-page">
+  <!-- Sidebar -->
+  <aside class="profile-sidebar">
+    <ul>
+      <li><a routerLink="details" routerLinkActive="active">My details</a></li>
+      <!-- //<li><a routerLink="address" routerLinkActive="active">My address</a></li> -->
+      <li><a routerLink="orders" routerLinkActive="active">My orders</a></li>
+      <li><a routerLink="settings" routerLinkActive="active">Account settings</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main content -->
+  <main class="profile-content">
+    <div class="breadcrumb">
+      <a href="/">Homepage</a> / <span>My Account</span>
+    </div>
+
+    <router-outlet></router-outlet>
+  </main>
+</div>

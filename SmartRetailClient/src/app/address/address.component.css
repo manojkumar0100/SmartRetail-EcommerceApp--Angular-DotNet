@@ -1,0 +1,305 @@
+.container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .card {
+    margin-top: 20px;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 5px;
+  }
+  
+  .card-header {
+    background-color: blue; /* Light grey background */
+    border-bottom: 2px solid #dee2e6; /* Slightly darker border at the bottom */
+    padding: 15px; /* Add some padding */
+    border-radius: 5px 5px 0 0; /* Rounded corners at the top */
+  }
+  
+  .card-header h3, .card-header h4 {
+    margin: 0; /* Remove default margin */
+    font-size: 1.5rem; /* Set font size */
+    color: #343a40; /* Dark grey text color */
+    font-weight: bold; /* Bold text */
+  }
+
+  .address
+  {
+    padding: 20px;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px; /* Optional: Add some space below the header */
+}
+
+.btn-sm {
+    font-size: 0.875rem; /* Adjust the font size for a smaller button */
+    padding: 0.15rem 0.2rem; /* Adjust padding for a smaller button */
+}
+  
+  .card-header span {
+    color: lightgreen;
+    font-size: small;
+  }
+  
+  .card-body {
+    padding: 20px;
+    background-color: white;
+  }
+  
+  .card-body p {
+    margin: 5px 0;
+    font-size: 0.9rem; /* Smaller text */
+    color: #343a40;
+    display: flex;
+    justify-content: space-between; /* Align text and prices to the right */
+  }
+  
+  .card-body h4 {
+    margin-top: 10px;
+    font-size: 1.1rem; /* Smaller text */
+    color: #28a745;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between; /* Align text and prices to the right */
+  }
+  
+  .btn-secondary {
+    
+    border-color: #007bff; /* Blue border color */
+    font-size: 1rem; /* Font size */
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #052d68; /* Darker blue on hover */
+    border-color: #004085; /* Darker blue border on hover */
+  }
+
+  .card .card-img-top {
+    height: 150px;
+    object-fit: cover;
+  }
+  
+  .card .card-body {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card .btn-secondary {
+    margin-top: auto;
+  }
+
+  hr
+  {
+    color: grey;
+
+  }
+
+  h5
+  {
+    padding-top: 10px;padding-bottom: 8px;
+  }
+
+.small-image {
+    width: 50px; /* Small size for product images */
+    height: 50px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.delivery-estimate {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.delivery-estimate b
+{
+    padding-left: 3px;
+    text-indent: 1px;
+    font-weight: 500;
+}
+
+.no-address {
+    color: red;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.showaddress
+{
+  padding-top: 0%;
+}
+
+.address-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 0px;
+    border-radius: 5px;
+}
+
+.modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.5); /* Lighten the background when modal is open */
+}
+
+.modal-content {
+    background-color: #f8f9fa; /* Light grey background */
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.modal-header h5 {
+    color: white; /* Light black color */
+    font-weight: 400; /* Light weight */
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-control {
+    background-color: #f1f1f1; /* Light grey color */
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+}
+
+.form-control::placeholder {
+    color: #6c757d; /* Same color as the placeholder */
+}
+
+.form-control:focus::placeholder {
+    color: transparent; /* Hide placeholder when focused */
+}
+
+.form-text {
+    color: #fd7e14; /* Small orange color */
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.no-address {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.address-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+/* .card.address {
+  height: 70%; 
+  min-height: 300px; 
+} */
+
+.card-body.d-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Ensure the card body takes full height */
+    text-align: center; /* Center text horizontally */
+}
+
+.close
+{
+  border: none;
+  color: red;
+  font-size: larger;
+}
+.no-address {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    padding: 90px;
+}
+
+
+.modal-body {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+h6 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+}
+
+
+.modal-header
+{
+  background-color:#1606a4;
+}
+
+.address-card{
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  padding: 20px;
+  width: 100%;
+  margin: 10px auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+
+
+.name {
+  font-weight: bold;
+  color: black;
+  font-size: 1.2em;
+}
+
+.address {
+  color: black;
+  font-weight: normal;
+  font-size: 0.9em;
+  margin-top: 10px;
+  padding: 0px;
+}
+
+.remove-button {
+  
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-top: 20px;
+}
+
+.remove-button:hover {
+  background-color: #ff1a1a;
+}

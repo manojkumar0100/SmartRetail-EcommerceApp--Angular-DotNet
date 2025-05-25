@@ -1,0 +1,44 @@
+
+<div class="admin-dashboard">
+  <aside class="dashboard-sidebar">
+    <h2>Admin Dashboard</h2>
+    <ul>
+      <li><a [routerLink]="['/']" (click)="logout()"><i class="bi bi-house-door-fill"></i> Go to Homepage</a></li>
+      <li><a routerLink="add-product" routerLinkActive="active">Add New Product</a></li>
+      <li><a routerLink="edit-product"  routerLinkActive="active">Edit Existing Products</a></li>
+      <li><a routerLink="manage-stock" routerLinkActive="active">Manage Stock</a></li>
+      <li><a [routerLink]="['/']" (click)="logout()"><i class="bi bi-box-arrow-left"></i> Logout</a></li>
+    </ul>
+  </aside>
+
+  <main class="dashboard-content">
+    <section class="dashboard-header">
+      <h1>Welcome to Admin Inventory Dashboard</h1>
+      <p>Manage all your products and stock levels efficiently from here.</p>
+    </section>
+
+    <section class="dashboard-statistics">
+      <div class="card">
+        <h3>Total Products</h3>
+        <p>{{ totalProducts }}</p>
+      </div>
+      <div class="card">
+        <h3>Low Stock Products</h3>
+        <p>{{ lowStockProducts }}</p>
+      </div>
+      <div class="card">
+        <h3>High Stock Products</h3>
+        <p>{{ highStockProducts }}</p>
+      </div>
+      <div class="card">
+        <h3>Out of Stock</h3>
+        <p>{{ outOfStockProducts }}</p>
+      </div>
+    </section>
+
+    <section class="dashboard-main-content">
+      <p>Select an option from the sidebar to manage inventory.</p>
+      <router-outlet></router-outlet>
+    </section>
+  </main>
+</div>

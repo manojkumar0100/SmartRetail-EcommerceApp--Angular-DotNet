@@ -1,0 +1,127 @@
+<div class="form-container">
+    <div id="loginForm" class="form-content active">
+        <div class="welcome-msg my-5">
+            <h2>Welcome Admin!</h2>
+            <h2 style="margin-top: -5px;">Login to your account</h2>
+            
+        </div>
+        <form [formGroup]="loginForm" (ngSubmit)="onLoginSubmit()">
+            <div class="mb-3 form-group">
+                <label for="loginEmail" class="form-label w-100">
+                    Email address
+                    <span class="text-danger">*</span>
+                </label>
+                <input 
+                    type="email" 
+                    [ngClass]="{ 'is-invalid': login_submitted && f_login['email'].errors }" 
+                    class="form-control" 
+                    id="loginEmail"
+                    formControlName="email"
+                    placeholder="Enter your email"
+                />
+                <div *ngIf="login_submitted && f_login['email'].errors" class="invalid-feedback">
+                    <div *ngIf="f_login['email'].errors['required']">Email is required</div>
+                    <div *ngIf="f_login['email'].errors['email']">Email is invalid</div>
+                </div>
+            </div>
+            
+            <div class="mb-3 form-group">
+                <label for="loginPassword" class="form-label">
+                    Password
+                    <span class="text-danger">*</span>
+                </label>
+                <input 
+                    type="password" 
+                    [ngClass]="{ 'is-invalid': login_submitted && f_login['password'].errors }" 
+                    class="form-control" 
+                    formControlName="password"
+                    id="loginPassword"
+                    placeholder="Enter your password"
+                >
+                <i class="fa-regular fa-eye-slash" id="toggleLoginPassword" (click)="ViewLoginPassword()"></i>
+                <div *ngIf="login_submitted && f_login['password'].errors" class="invalid-feedback">
+                    <div *ngIf="f_login['password'].errors['required']">Password is required</div>
+                    <div *ngIf="f_login['password'].errors['minlength']">
+                        Password must have atleast 8 characters
+                    </div>
+                    <div *ngIf="f_login['password'].errors['pattern']">
+                        Password must contain atleast one uppercase letter, one lowercase letter, one number and a special character
+                    </div>
+                    <div *ngIf="f_login['password'].errors['maxlength']">
+                        Password can have atmost 20 characters
+                    </div>
+                </div>
+            </div>
+            <div class="form-group mb-5">
+                <span class="text-danger">*</span> denotes the mandatory fields
+            </div>
+            <div class="row mt-5 w-100 mx-auto mb-3">
+                <button 
+                    type="submit" 
+                    class="btn btn-success"
+                >LOGIN</button>
+            </div>
+            <div class="d-flex justify-content-between text-center pl-2 pr-2">
+                <div>
+                    <input type="checkbox" class="form-check-input">
+                    <label style="margin-left: 5px;">Remember me</label>
+                </div>
+                <!-- <div>
+                    <a href="#" id="forgotPassword">Forgot your password?</a>
+                </div> -->
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+<!-- Login Error Modal -->
+<div
+  class="modal fade"
+  id="exampleModalCenter"
+  (click)="hideModal($event)"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true"
+  [ngClass]="{ 'show': showLoginErrorModal, 'd-block': showLoginErrorModal }" 
+>
+<div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header d-flex justify-content-between">
+<h5 class="modal-title" id="exampleModalLongTitle" *ngIf="loginError == 'Email Not Matched' || loginError == 'Password Not Matched'">Login Error</h5>
+<h5 class="modal-title" id="exampleModalLongTitle" *ngIf="loginError != 'Email Not Matched' && loginError != 'Password Not Matched'">Registration Error</h5>
+<button
+          type="button"
+          class="close"
+          aria-label="Close"
+          (click)="hideModal()"
+>
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="modal-body">
+<!-- Display error message dynamically -->
+<p>{{loginError}}</p>
+
+</div>
+<!-- <div class="modal-footer">
+<button
+          type="button"
+          class="btn btn-secondary"
+          (click)="hideModal()"
+>
+          Close
+</button>
+</div> -->
+</div>
+</div>
+</div>
+  
+
+  
+

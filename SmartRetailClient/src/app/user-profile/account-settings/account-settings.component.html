@@ -1,0 +1,14 @@
+<h2>Account Settings</h2>
+
+<section class="settings-section">
+  <div class="form-group">
+    <label for="password">Change Password</label>
+    <input type="password" id="password" [(ngModel)]="settingsData.password">
+  </div>
+  <div class="form-group">
+    <label for="confirmPassword">Confirm Password</label>
+    <input type="password" id="confirmPassword" [(ngModel)]="settingsData.confirmPassword">
+  </div>
+  
+  <button class="btn save-btn" (click)="onSave()">Save Settings</button>
+</section>

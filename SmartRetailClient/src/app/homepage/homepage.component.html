@@ -1,0 +1,141 @@
+<!-- <body class=""> -->
+  
+
+<div class="homepage-container container-fluid">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+    <div class="container-fluid my-2" id="navbar-container">
+      <a class="navbar-brand" href="#">SmartRetail</a>
+      <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="sidebar offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <!-- Sidebar Header -->
+        <div class="offcanvas-header text-white border-bottom align-items-center">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">SmartRetail</h5>
+          <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 pe-3">
+            <li class="nav-item white-border">
+              <a class="nav-link active" aria-current="page" [routerLink]="['/']">Home</a>
+            </li>
+          </ul>
+
+          <!-- Search Bar -->
+          <form role="search" (ngSubmit)="onSearchChange()" class="my-3 mx-lg-3 mx-0 my-lg-0">
+            <div class="input-group">
+              <input type="search" class="form-control shadow-none" id="search-bar" placeholder="Search here..." aria-label="Search" aria-describedby="search-button"
+                [(ngModel)]="searchQuery" name="searchQuery" (input)="onSearchChange()" />
+              <button class="btn btn-light" type="button" (click)="onSearchChange()">
+                <i class="bi bi-search"></i>
+              </button>
+            </div>
+          </form>
+
+          <!-- User Actions (Cart, Wishlist, Profile) -->
+          <ul class="navbar-nav">
+
+            <!-- Wishlist Icon -->
+            <li class="nav-item white-border" *ngIf="isLoggedin">
+              <a class="nav-link active" [routerLink]="['/wishlist']">
+                <i class="bi bi-heart h5"></i> Wishlist
+              </a>
+            </li>
+
+            <!-- Cart Icon -->
+            <li class="nav-item white-border" *ngIf="isLoggedin">
+              <a class="nav-link active" [routerLink]="['/cart']">
+                <i class="bi bi-cart3 h5"></i> Cart
+              </a>
+            </li>
+
+            <li class="nav-item dropdown white-border" *ngIf="!isLoggedin">
+              <a class="nav-link active dropdown-toggle" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Profile
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                <li><a class="dropdown-item" href="#" [routerLink]="['/login']">Login / Register</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown white-border" *ngIf="isLoggedin">
+              <a class="nav-link active dropdown-toggle" id="accountDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-person-circle"></i> {{username}}
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="accountDropdown">
+                <li><a class="dropdown-item " href="#" [routerLink]="['/profile']">My Profile</a></li>
+                <div class="dropdown-divider"></div>
+                <li><a class="dropdown-item" href="#" (click)="OnLogout()">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Categories Section (still displayed separately) -->
+  <section class="categories">
+    <h3 class="text-center mt-5 mb-5">Categories</h3>
+    <div class="row mx-3 mb-5">
+      <div class="col-6 col-md-4 col-lg-2 mb-2">
+      <div class="card category-card h-100 text-center" (click)="filterByCategory(0)">
+        <img [src]="Img" alt="All" class="category-image card-img-top img-fluid mx-auto" />
+        <div class="card-body">
+          <h5 class="card-title">ALL </h5>
+        </div>
+      </div>
+    </div>
+      <div class="col-6 col-md-4 col-lg-2 mb-2" *ngFor="let category of categories">
+        
+        <div class="card category-card h-100 text-center" (click)="filterByCategory(category.categoryID)">
+          <img [src]="category.imageUrl" alt="{{ category.name }}" class="category-image card-img-top img-fluid mx-auto" />
+          <div class="card-body">
+            <h5 class="card-title">{{ category.name }}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main content: Product Listing -->
+  <section class="product-listing mb-5">
+    <h3 class="text-center mb-5 mt-5">Featured Products</h3>
+    <div class="row mx-auto p-auto">
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3 mb-4" *ngFor="let product of filteredProducts">
+        <div class="card product-card h-100">
+          <div class="product-image-container text-center p-3">
+            <a [routerLink]="['/product', product.productID]">
+              <img [src]="product.imageUrl" alt="{{ product.name }}" class="card-img-top img-fluid" />
+            </a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text">{{product.price | currency : 'INR'}} <br>
+              <span class="text-danger text-decoration-line-through">MRP: {{product.price * 1.1 | currency : 'INR'}}</span>
+            </p>
+
+            <!-- Button and Wishlist Icon (Wrapped together) -->
+            <div class="d-flex justify-content-between">
+              <button class="btn btn-primary w-100" (click)="addToCart(product)">Add to Cart</button>
+              <button class="btn wishlist-btn w-10" (click)="toggleWishlist(product)">
+                <i [class]="product.isInWishlist ? 'bi bi-heart-fill' : 'bi bi-heart'"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Toast Notification -->
+  <div *ngIf="showToast" class="toast-notification">
+    <p>{{ toastMessage }}</p>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer bg-dark py-3 text-white text-center">
+    <p>&copy; {{curYear}} SmartRetail. All rights reserved.</p>
+  </footer>
+</div>

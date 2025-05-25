@@ -1,0 +1,136 @@
+  .custom-card {
+    position: relative; /* Ensure the card is the reference point for absolute positioning */
+    width: auto;
+    margin: auto; /* Center the card */
+  }
+
+  @media(max-width: 991px) {
+    .sidebar {
+        background-color: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+    }
+  }
+  
+  .white-border {
+    border: 2px solid transparent;
+    border-radius: 5px;
+  }
+  
+  .white-border:hover {
+    border: 2px solid white;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+  
+  .fixed-image {
+    padding: auto;
+    width: 100%; /* Ensure the image takes full width of the card */
+    height: 200px; /* Set a fixed height for the image */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+  }
+  .no-address {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    padding: 90px;
+  }
+
+  .product-image-container {
+    background-color: white;
+    height: 300px; /* Fixed height for the image container */
+    width: 100%;    /* Make the container width 100% */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+   
+  .remove-icon {
+    position: absolute; /* Position the icon absolutely */
+    top: 2px; /* Adjust the top position as needed */
+    right: 2px; /* Adjust the right position as needed */
+    font-size: 1.8rem; /* Make the icon a little larger */
+    color: white; /* Black color for the icon lines */
+    padding: 0; /* Remove padding */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    outline: black; /* Outline color */
+    background-color: grey; /* Background color */
+    border-radius: 100%; /* Make the icon circular */
+    display: inline-block; /* Ensure the background covers only the icon size */
+    width: 1.8rem;; /* Set width to match the icon size plus padding */
+    height: 1.8rem; /* Set height to match the icon size plus padding */
+    text-align: center; /* Center the icon within the background */
+    line-height: 1.8rem ;/* Center the icon vertically */
+    box-sizing: border-box; /* Include padding within the width and height */
+}
+  
+  h3
+  {
+    padding: 10px;
+  }
+  .wishlist-title {
+    font-size: 1.5rem; /* Adjust the size of the "My Wishlist" text */
+    font-weight: bold; /* Make the "My Wishlist" text bold */
+    margin-bottom: 20px;
+  }
+  
+  .wishlist-count {
+    font-size: 1.2rem; /* Make the span text slightly smaller */
+    color: #9b9a9a; /* Light black color for the span */
+    font-weight: 400;
+  }
+
+
+  
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; /* Ensure the card body takes full height of the card */
+  }
+  
+  .product-price {
+    text-align: center;
+    margin: auto;
+    font-size: 0.9rem;
+    color: black;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Add space between the elements */
+  }
+  
+  .product-price .original-price {
+    text-decoration: line-through;
+    color: #999; /* Light black color */
+    font-weight: 300; /* Very small font weight */
+  }
+  
+  .discount {
+    font-size: 0.8rem; 
+  }
+  
+  /* .quantity-left {
+    font-size: 0.8rem;
+    color: #5a72c9;
+    font-weight: bold;
+    border: 1px solid #5a72c9;
+    margin: 0;
+    padding: 0 2px;
+    border-radius: 5px;
+    width: auto;
+  } */
+  
+  .quantity-left {
+    font-size: 0.8rem;
+    color: #9ebbe9;
+    /* font-weight: bold; */
+    border: 1px solid #9ebbe9;
+    padding: 3px;
+    border-radius: 5px;
+  }
+
+  .card
+  {
+    background-color: #f9f9f9;
+  }
