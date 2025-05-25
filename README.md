@@ -2,6 +2,12 @@
 
 SmartRetail is a comprehensive, full-stack **E-Commerce platform** built using **Angular** for the frontend and **ASP.NET Web API** with **Entity Framework** for the backend. It supports authentication, product browsing, invoice generation, and admin panel features.
 
+
+## 🌐 Live Demo / Deployment URLs
+
+- **Frontend (Angular app):** [https://smartretailapp.azurewebsites.net/]  
+- **Backend API:** [https://smartretailserver.azurewebsites.net/swagger/ui/index#/]
+
 ---
 
 ## 📁 Project Folder Structure
@@ -33,7 +39,7 @@ SmartRetail/
 ## ✅ Tech Stack
 
 ### Frontend (SmartRetailClient)
-- Angular 15+
+- Angular 18+
 - TypeScript, HTML, SCSS/CSS
 - Angular Routing & Guards
 - Angular Services & Interceptors
@@ -98,7 +104,7 @@ dotnet run
 
 The Web API will be hosted at: `https://localhost:5001/api`
 
-You can test APIs using **Swagger** at `https://localhost:5001/swagger/index.html`
+You can test APIs using **Swagger** at `https://localhost:5001/swagger/ui/index`
 
 ---
 
@@ -205,3 +211,9 @@ Pull requests are welcome! For major changes, please open an issue first.
 - Host Angular app on Vercel, Netlify, or Azure Static Web Apps
 - Host Web API on Azure App Services or Render
 - Use Azure SQL or hosted SQL Server for the database
+
+
+
+
+
+
