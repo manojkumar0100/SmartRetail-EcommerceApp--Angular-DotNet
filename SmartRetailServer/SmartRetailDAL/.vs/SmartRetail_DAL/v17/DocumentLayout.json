@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\tanguturimanoj.kumar\\source\\repos\\Web_Api\\SmartRetail_DAL\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DB9485B0-52E1-4EC7-8CF9-C0263D622B1C}|SmartRetail_DAL.csproj|c:\\users\\tanguturimanoj.kumar\\source\\repos\\web_api\\smartretail_dal\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DB9485B0-52E1-4EC7-8CF9-C0263D622B1C}|SmartRetail_DAL.csproj|solutionrelative:repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Repository.cs",
+              "DocumentMoniker": "C:\\Users\\tanguturimanoj.kumar\\source\\repos\\Web_Api\\SmartRetail_DAL\\Repository.cs",
+              "RelativeDocumentMoniker": "Repository.cs",
+              "ToolTip": "C:\\Users\\tanguturimanoj.kumar\\source\\repos\\Web_Api\\SmartRetail_DAL\\Repository.cs",
+              "RelativeToolTip": "Repository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-20T10:58:04.522Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

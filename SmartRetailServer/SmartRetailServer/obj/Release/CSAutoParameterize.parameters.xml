@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="SmartRetailDBContext-Web.config Connection String" description="SmartRetailDBContext Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/EDM.csdl|res://*/EDM.ssdl|res://*/EDM.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=smartretaildbserver.database.windows.net;initial catalog=SmartRetailDB;user id=smartretail;password=Manoj@225$;trustservercertificate=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\tanguturimanoj\.kumar\\OneDrive\ -\ HCL\ TECHNOLOGIES\ LIMITED\\Documents\\repos\\Web_Api\\SmartRetail_Server\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='SmartRetailDBContext']/@connectionString" />
+  </parameter>
+</parameters>
