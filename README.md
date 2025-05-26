@@ -177,7 +177,7 @@ Entities:
 ## 📸 Screenshots (Optional)
 
 ```
-client/src/assets/screenshots/login.png
+SmartRetailClient/src/assets/screenshots/home.png
 client/src/assets/screenshots/products.png
 client/src/assets/screenshots/invoice.png
 ```
