@@ -176,12 +176,18 @@ Entities:
 
 ## 📸 Screenshots
 
-```
-![alt text](./SmartRetailClient/src/assets/screenshots/home.png)
-SmartRetailClient/src/assets/screenshots/home.png
-client/src/assets/screenshots/products.png
-client/src/assets/screenshots/invoice.png
-```
+## 📸 Screenshots
+
+### 🏠 Home Page
+![Home Screenshot](SmartRetailClient/src/assets/screenshots/home.png)
+
+### 🛍️ Products Page
+![Products Screenshot](SmartRetailClient/src/assets/screenshots/products.png)
+
+### 🧾 Invoice Page
+![Invoice Screenshot](SmartRetailClient/src/assets/screenshots/invoice.png)
+
+
 
 Use markdown to show screenshots on GitHub page.
 
