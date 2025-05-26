@@ -200,7 +200,7 @@ Entities:
 
 <div align="center">
 ## 📦 Product Detail
-<img src="SmartRetailClient/src/assets/screenshots/product.png" width="70%" />
+<img src="SmartRetailClient/src/assets/screenshots/productdetail.png" width="70%" />
 </div>
 
 <div align="center">
