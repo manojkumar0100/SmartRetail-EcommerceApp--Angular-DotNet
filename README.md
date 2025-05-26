@@ -176,17 +176,29 @@ Entities:
 
 ## 📸 Screenshots
 
+## 🔐 Login
+<img src="SmartRetailClient/src/assets/screenshots/login.png" width="70%" />
 
-### 🏠 Home Page
-<div align="center">
-  <img src="SmartRetailClient/src/assets/screenshots/home.png" width="60%" />
-</div>
+## 📝 Register
+<img src="SmartRetailClient/src/assets/screenshots/register.png" width="70%" />
 
-### 🛍️ Products Page
-![Products Screenshot](SmartRetailClient/src/assets/screenshots/products.png)
+## 🏠 Home
+<img src="SmartRetailClient/src/assets/screenshots/home.png" width="70%" />
 
-### 🧾 Invoice Page
-![Invoice Screenshot](SmartRetailClient/src/assets/screenshots/invoice.png)
+## 🛍️ Products
+<img src="SmartRetailClient/src/assets/screenshots/products.png" width="70%" />
+
+## 📦 Product Detail
+<img src="SmartRetailClient/src/assets/screenshots/product-detail.png" width="70%" />
+
+## 🛒 Cart
+<img src="SmartRetailClient/src/assets/screenshots/cart.png" width="70%" />
+
+## ❤️ Wishlist
+<img src="SmartRetailClient/src/assets/screenshots/wishlist.png" width="70%" />
+
+## 📑 Orders
+<img src="SmartRetailClient/src/assets/screenshots/orders.png" width="70%" />
 
 
 
