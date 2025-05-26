@@ -178,7 +178,7 @@ Entities:
 
 
 ### 🏠 Home Page
-<img src="SmartRetailClient/src/assets/screenshots/home.png" width="60%" height ="80%" />
+<img src="SmartRetailClient/src/assets/screenshots/home.png" width="60%" height ="80%" margin="auto" />
 
 ### 🛍️ Products Page
 ![Products Screenshot](SmartRetailClient/src/assets/screenshots/products.png)
