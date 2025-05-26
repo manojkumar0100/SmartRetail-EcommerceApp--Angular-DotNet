@@ -174,10 +174,10 @@ Entities:
 
 ---
 
-## 📸 Screenshots (Optional)
+## 📸 Screenshots
 
 ```
-![alt text](image.png)
+![alt text](SmartRetailClient/src/assets/screenshots/home.png)
 SmartRetailClient/src/assets/screenshots/home.png
 client/src/assets/screenshots/products.png
 client/src/assets/screenshots/invoice.png
